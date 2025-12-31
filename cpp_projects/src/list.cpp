@@ -50,11 +50,19 @@ void List::add_item(){
     cout << "\n*** New item added *** \n";
 }
 void List::delete_item(){
+    int index;
     if(list.empty()){
         cout << "The list is currently empty!\n";
     }else{
-        print_list();
-        cout << "What element do you wish to deletee?: ";
+        cout << "\n";
+        cout << "*** Deleting item *** \n";
+        for (int i = 0; i < (int)list.size(); i++){
+            cout << i << ": " << list[i] << endl;
+        };
+        cout << "What element do you wish to delete?: \n";
+        cin >> index;
+        list.erase(list.begin()+index);
+
         
     }
     //print_menu();
